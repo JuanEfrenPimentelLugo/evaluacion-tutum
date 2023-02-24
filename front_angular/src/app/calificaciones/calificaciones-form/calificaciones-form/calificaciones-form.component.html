@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Registrar calificaciones</h2>
+<mat-dialog-content class="mat-typography">
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="alumno.nombre">
+  </mat-form-field>
+
+  <div *ngFor="let m of materias">
+
+
+
+    <div class="example-button-container">
+      <mat-form-field appearance="fill">
+        <label>{{m.nombre}}</label>
+        <input matInput type="number" [(ngModel)]="m.calificacion">
+
+      </mat-form-field>
+      <button mat-fab color="primary" (click)="save(m)" aria-label="Guardar">
+        <mat-icon>save</mat-icon>
+      </button>
+    </div>
+
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+
+</mat-dialog-actions>
